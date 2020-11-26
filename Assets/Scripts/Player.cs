@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // configuration parameters
-    public Vector3 startPosition;
+    //public Vector3 startPosition;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] GameObject laserPrefab;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     {
         //startPosition = new Vector3(0, -8, 0);
         transform.position = new Vector3(0, -8, 0);
-        transform.position = startPosition;
+        //transform.position = startPosition;
         SetUpMoveBoundaries();
     }
 

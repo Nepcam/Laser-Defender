@@ -29,6 +29,13 @@ public class Player : MonoBehaviour
         Fire();
     }
 
+    IEnumerator PrintAndWait()
+    {
+        Debug.Log("First message sent");
+        yield return new WaitForSeconds(3);
+        Debug.Log("Second message sent");
+    }
+
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1"))

@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, -8, 0);
         SetUpMoveBoundaries();
+        StartCoroutine(PrintAndWait());
     }
 
     // Update is called once per frame

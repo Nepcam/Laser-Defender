@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // configuration parameters
-    //public Vector3 startPosition;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] GameObject laserPrefab;
@@ -19,9 +18,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startPosition = new Vector3(0, -8, 0);
         transform.position = new Vector3(0, -8, 0);
-        //transform.position = startPosition;
         SetUpMoveBoundaries();
     }
 
@@ -48,13 +45,13 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
-        var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-        var newYPos = Mathf.Clamp(transform.position.x + deltaY, yMin, yMax);
+        float newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
+        float newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
-        transform.position = new Vector2(newYPos, newYPos);
+        transform.position = new Vector2(newXPos, newYPos);
     }
 
     private void SetUpMoveBoundaries()
